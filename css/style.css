@@ -1,0 +1,17 @@
+.cartt {
+    width: 300px;
+    padding: 0;
+}
+
+
+.dark{
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.margen {
+    margin-top: 90px;
+}
