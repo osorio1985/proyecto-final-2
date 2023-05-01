@@ -35,7 +35,7 @@ import dom from "./dom.js";
 
 const searcontry = dom.$('#searcontry');
 
-searcontry.addEventListener('change',() => {
+searcontry.addEventListener('keyup',() => {
 
   let filtro = searcontry.value;
   const filtered = datos.filter(dato => dato.name.common.toLowerCase().includes(filtro.toLowerCase()))
@@ -44,6 +44,19 @@ searcontry.addEventListener('change',() => {
   dom.showCards(filtered)
 
 })
+
+const presentarclick = document.querySelectorAll('.cartt');
+presentarclick.forEach(unico => {
+unico.addEventListener('click', () => {
+  console.log('hola')
+let filter = unico.id;
+const filtered = filter = '' ? datos : data.filterByName(datos, filter)
+
+dom.mostrarCard(filtered)
+})
+})
+
+
 
 
 //Dark mode

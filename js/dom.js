@@ -41,47 +41,53 @@ ciudades.forEach(element => {
   regiones.appendChild(li);
 });
 }
-/* const newCard2 = (obj)=>{
-  const div = document.createElement ('div')
-  div.className = 'card';
-  div.innerHTML =`
-  <main class="container col-4" id="banderas"> 
-    <div class="card2">
 
-      <div class="card-content"></div>
-      <ul>
-      <li>Top Level Domain:</li>
-      ${obj.tld}
-      </ul>
-      <ul>
-      <il>Currencies</il>
-      ${obj.currencies}
-    </ul>
-    <ul>
-      <il>Languages:</il>
-      ${obj.laguages}
-      </ul>
-      <ul>
-      <il>Border Countries:</il>
-      ${obj.borders}
-      </ul>
-      
-      
-    
 
-    </div> 
+const cardUnica = $('#cardUnica')
 
-  </main>
- 
-  `
-  return div
+const nuevaCard = (obj) => {
 
+  const div =document.createElement ('div')
+  div.className = 'card ';
+  div.innerHTML =
+` <div>
+<img src="=${obj.flags.svg}" alt="">
+<div>
+<div>
+  <p>Native name:${obj.name.common} </p>
+  <p>Population: ${obj.population}</p>
+  <p>Region:  ${obj.region}</p>
+  <p>Sub Region: ${obj.subregion}</p>
+  <p>Capital: ${obj.capital}</p>
+</div>
+<div>
+  <p>Top Level Domain: </p>
+  <p>Currencies: </p>
+  <p>Languages: </p>
+</div>
+<div>Border Countries: </div>
+</div>`
+return div
 }
- */
+
+const mostrarCard = (arr) => {
+  cardUnica.innerHTML = '';
+  arr.forEach( element => {
+  const card = nuevaCard(element);
+  cardUnica.appendChild(card);
+ })
+}
+
+
+
+
 export default {
     newCard,
     showCards,
     $,
     listaRegiones,
+    mostrarCard,
+    nuevaCard,
+    paises,
     
 }
